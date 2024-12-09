@@ -101,8 +101,13 @@ const SearchPanel: React.FC = () => {
       sortBy: "best",
     };
     setSearchParams(params);
-    refetch();
   };
+
+  useEffect(() => {
+    if (searchParams) {
+      refetch();
+    }
+  }, [searchParams, refetch]);
 
   useEffect(() => {
     if (isSuccess && data) {
