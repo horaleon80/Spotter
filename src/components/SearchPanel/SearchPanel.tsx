@@ -137,7 +137,7 @@ const SearchPanel: React.FC = () => {
             <Autocomplete
               options={tripTypeOptions}
               value={tripType}
-              onChange={(event, newValue) => {
+              onChange={(_, newValue) => {
                 setTripType(newValue || tripTypeOptions[0]);
                 setTripTypeContext(newValue || tripTypeOptions[0]);
               }}
@@ -274,7 +274,7 @@ const SearchPanel: React.FC = () => {
             <Autocomplete
               options={flightClassOptions}
               value={flightClass}
-              onChange={(event, newValue) =>
+              onChange={(_, newValue) =>
                 setFlightClass(newValue || flightClassOptions[0])
               }
               renderInput={(params) => (
