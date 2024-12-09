@@ -52,9 +52,7 @@ const SearchLocation: React.FC<SearchLocationProps> = ({ onClose, type }) => {
 
   return (
     <>
-      {isFetching && (
-        <Loader />
-      )}
+      {isFetching && <Loader />}
 
       <Box
         sx={{
@@ -108,15 +106,18 @@ const SearchLocation: React.FC<SearchLocationProps> = ({ onClose, type }) => {
                     {suggestions.data.map((airport: any, index: number) => (
                       <ListItem
                         key={index}
-                        component={"button"}
+                        component="button"
                         onClick={() => handleSuggestionClick(airport)}
                         sx={{
+                          bgcolor: theme.palette.background.paper,
                           "&:hover": {
                             bgcolor: theme.palette.action.hover,
                           },
+                          color: theme.palette.text.primary,
+                          border: `1px solid ${theme.palette.divider}`,
                         }}
                       >
-                        <Typography color="text.primary">
+                        <Typography color="inherit">
                           {airport.presentation.suggestionTitle}
                         </Typography>
                       </ListItem>

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_BASE_URL = "https://sky-scrapper.p.rapidapi.com/api/";
 const API_BASE_HOST = "sky-scrapper.p.rapidapi.com";
-const API_KEY = "31bae21bbcmshc3a6492b8db041ap1df4ffjsn7fd0b08311db";
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
